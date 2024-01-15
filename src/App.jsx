@@ -1,19 +1,19 @@
 import './App.css';
 
 import Header from './Components/Header';
+import Tools from './Components/Tools';
 import DeveloperQuotes from './Components/DeveloperQuotes';
 import ProjectList from './Components/ProjectList';
 import Contact from './Components/Contact';
-import About from './Components/About';
 
 function App() {
   return (
     <>
       <Header/>
+      <Tools />
       <DeveloperQuotes />
       <ProjectList />
       <Contact />
-      <About />
     </>
   );
 }

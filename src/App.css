@@ -4,8 +4,123 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #0c0c0c;
+  --primary: #7928a9;
+  --secondary: #ca5be0;
+  --primary-light: #e76be1;
+}
+
 body {
-  background: #0c0c0c;
+  background: var(--bg);
   color: white;
-  font-family: Roboto;
+  font-family: Roboto Mono;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 60px;
+}
+
+/*Header*/
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+header > div > p {
+  line-height: 2;
+}
+
+header > div:first-of-type {
+  width: 50%;
+}
+
+header > div:nth-of-type(2) {
+  width: 30%;
+}
+
+header h1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-wrap: wrap;
+  align-items: self-start;
+}
+
+header h1 span {
+  background: var(--primary);
+  border-radius: 12px;
+  color: var(--primary-light);
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: .05em;
+  margin: 0;
+  padding: 0 1rem 0 1rem;
+  text-transform: capitalize;
+}
+
+header h1 p {
+  font-weight: 900;
+  letter-spacing: .02em;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+header h1 p b {
+  color: var(--primary-light);
+  font-size: 3.6rem;
+  font-family: monospace;
+  text-shadow: 3px 3px 0 #1f2127, -1px -1px 0 #1f2127, 1px -1px 0 #1f2127, -1px 1px 0 #1f2127, 1px 1px 0 #1f2127;
+}
+
+header .container {
+  height: 100vh;
+}
+
+header .container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#allmulti > polygon {
+  fill-opacity: 0.05;
+  transition: opacity 1s ease;
+}
+
+.light {
+  transition: opacity 1s ease;
+  fill-opacity: 0.2 !important;
+}
+
+/*Developer Quotes*/
+
+/*Prohject List*/
+
+/*Contact*/
+
+/*About*/
+
+
+@media screen and (max-width: 1200px) {
+  header h1 span {
+    font-size: 1rem;
+  }
+
+  header h1 p {
+    font-size: 2.9rem;
+  }
+
+  header h1 p b {
+    font-size: 3.4rem;
+  }
 }
