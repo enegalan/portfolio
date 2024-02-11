@@ -1,0 +1,213 @@
+@import url('Colors.css');
+.ha-screen-reader {
+    width: var(--ha-screen-reader-width, 1px);
+    height: var(--ha-screen-reader-height, 1px);
+    padding: var(--ha-screen-reader-padding, 0);
+    border: var(--ha-screen-reader-border, none);
+
+    position: var(--ha-screen-reader-position, absolute);
+    clip-path: var(--ha-screen-reader-clip-path, rect(1px, 1px, 1px, 1px));
+    overflow: var(--ha-screen-reader-overflow, hidden);
+}
+
+/*
+  =====
+  UIA-TIMELINE
+  =====
+  */
+
+.uia-timeline__container {
+    display: var(--uia-timeline-display, grid);
+}
+
+.uia-timeline__groups {
+    display: var(--uia-timeline-groups-display, grid);
+    ;
+    gap: var(--uia-timeline-groups-gap, 1rem);
+}
+/*
+  SKIN 4
+  */
+
+[data-uia-timeline-skin="4"] {
+    --_uia-timeline-line-color_default: #ffffff;
+    --_uia-timeline-space: var(--uia-timeline-space, .5rem);
+    --_uia-timeline-line-thickness: var(--uia-timeline-line-thickness, 2px);
+    --_uia-timeline-annual-sections-safe-gap: var(--uia-timeline-annual-sections-safe-gap, 1.5rem);
+    --_uia-timeline-point-line-position: var(--uia-timeline-point-line-position, 1rem);
+    --_uia-timeline-year-size: var(--uia-timeline-year-size, 3.5rem);
+}
+
+[data-uia-timeline-skin="4"] .uia-timeline__container {
+    position: relative;
+    gap: var(--uia-timeline-annual-sections-gap, 2.5rem);
+}
+
+[data-uia-timeline-skin="4"] .uia-timeline__line {
+    inline-size: var(--_uia-timeline-line-thickness);
+    block-size: 100%;
+    background-color: var(--uia-timeline-line-color, var(--_uia-timeline-line-color_default));
+
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: calc(var(--_uia-timeline-year-size) / 2);
+    transform: translate(-50%);
+    z-index: -1;
+}
+
+[data-uia-timeline-skin="4"] .uia-timeline__annual-sections {
+    display: flex;
+    align-items: flex-start;
+    isolation: isolate;
+}
+
+[data-uia-timeline-skin="4"] .uia-timeline__groups {
+    padding-inline-start: calc(var(--_uia-timeline-space));
+    padding-block-start: calc(var(--_uia-timeline-year-size) + var(--_uia-timeline-annual-sections-safe-gap));
+}
+
+[data-uia-timeline-skin="4"] .uia-timeline__group {
+    position: relative;
+    isolation: isolate;
+}
+
+[data-uia-timeline-skin="4"] .uia-timeline__point {
+    background-color: var(--uia-timeline-point-background-color, #111111);
+}
+
+[data-uia-timeline-skin="4"] .uia-timeline__point::before {
+    content: "";
+    inline-size: 100%;
+    block-size: var(--_uia-timeline-line-thickness);
+    background-color: var(--uia-timeline-line-color, var(--_uia-timeline-line-color_default));
+
+    position: absolute;
+    inset-block-start: var(--_uia-timeline-point-line-position);
+    inset-inline-start: calc(-1 * (var(--_uia-timeline-space) + var(--_uia-timeline-year-size) / 2));
+    z-index: -1;
+}
+
+[data-uia-timeline-skin="4"] .uia-timeline__year {
+    box-sizing: border-box;
+    flex: none;
+    inline-size: var(--_uia-timeline-year-size);
+    block-size: var(--_uia-timeline-year-size);
+
+    border:
+        var(--uia-timeline-year-line-thickness, var(--_uia-timeline-line-thickness)) var(--uia-timeline-year-line-style, solid) var(--uia-timeline-line-color, var(--_uia-timeline-line-color_default));
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+    background-color: var(--uia-timeline-year-background-color, #222222);
+
+    font-size: var(--uia-timeline-year-font-size, .75rem);
+    color: var(--uia-timeline-year-color, #868686);
+}
+
+[data-uia-timeline-adapter-skin-4="ui-card-skin-#1"] {
+    --uia-card-padding: var(--uia-timeline-point-padding, 1.5rem 1.5rem 1.25rem);
+    --uia-card-border-thickness: var(--uia-timeline-point-border-thickness, 3px);
+    --uia-card-border-color: var(--uia-timeline-point-border-color, var(--_uia-timeline-line-color_default));
+    --uia-card-background-color: var(--uia-timeline-point-background-color);
+}
+
+/*
+  =====
+  UIA-CARD
+  =====
+  */
+
+.uia-card__time-divider::before {
+    content: "—";
+    margin-inline: var(--uia-card-time-divider-margin-inline, .15rem);
+}
+
+[data-uia-card-skin="1"] .uia-card__container {
+    display: grid;
+    gap: .5rem;
+    padding: var(--uia-card-padding, 1rem 1.75rem);
+
+    background-color: var(--uia-card-background-color);
+    border-radius: var(--uia-card-border-radius, 2px);
+}
+
+[data-uia-card-skin="1"] .uia-card__intro {
+    display: grid;
+    gap: var(--uia-card-intro-gap, 1rem);
+}
+
+[data-uia-card-skin="1"] .uia-card__time {
+    grid-row: 1 / 1;
+    inline-size: fit-content;
+    padding: var(--uia-card-time-padding, .25rem 1.25rem .25rem);
+    background-color: var(--uia-card-time-background-color, #242424);
+
+    font-weight: var(--uia-card-time-font-weight, 700);
+    font-size: var(--uia-card-time-font-size, .75rem);
+    text-transform: var(--uia-card-time-text-transform, uppercase);
+    color: var(--uia-card-time-color, #5c5c5c);
+}
+
+[data-uia-card-skin="1"][data-uia-card-mod="1"] .uia-card__container {
+    border-inline-start: var(--uia-card-border-thickness, 2px) var(--uia-card-border-style, solid) var(--uia-card-border-color, currentColor);
+    box-shadow: var(--uia-card-box-shadow, 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
+}
+
+/*
+  =====
+  DEMO
+  =====
+  */
+
+:root {
+    --uia-timeline-line-color: var(--primary);
+    --uia-timeline-dot-color:  var(--primary-light);
+    --uia-timeline-arrow-color:  var(--primary-light);
+    --uia-timeline-line-thickness: 3px;
+    --uia-timeline-point-border-color:  var(--primary-light);
+    --uia-timeline-group-padding: 1.5rem 1.5rem 1.25rem;
+}
+
+[data-uia-timeline-skin="3"] {
+    --uia-timeline-year-background-color: var(--primary-light);
+}
+
+#timeline {
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#timeline p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+#timeline p:last-child {
+    margin-bottom: 0;
+}
+
+.page {
+    max-inline-size: 80ch;
+    padding: 1rem 2rem 3rem;
+    margin-inline: auto;
+}
+
+.uia-card__description, .ra-heading {
+    color: var(--light-white);
+}
+
+.uia-card__body img {
+    max-height: 300px;
+    max-width: 500px;
+    border-radius: 0.7rem;
+    box-shadow: #00000066 6px 7px 1px;
+}
+
+.timeline-title {
+    color: #868686;
+}

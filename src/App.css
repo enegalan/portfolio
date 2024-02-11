@@ -1,14 +1,8 @@
+@import url('css/Colors.css');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  --bg: #0c0c0c;
-  --primary: #7928a9;
-  --secondary: #ca5be0;
-  --primary-light: #e76be1;
 }
 
 body {
@@ -102,9 +96,61 @@ header .container {
   fill-opacity: 0.2 !important;
 }
 
-/*Developer Quotes*/
+/*Tools*/
+#tools {
+  margin-left: 25%;
+  margin-right: 25%;
+}
 
-/*Prohject List*/
+#tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+#tools-list div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  min-height: 120px;
+}
+
+#tools-list img {
+  width: 80px;
+  height: 60px;
+  border-radius: 1rem;
+  filter: invert();
+}
+
+/*Developer Quotes*/
+#developer-quotes {
+  color: white;
+  margin-top: 10.5rem;
+  margin-bottom: 10.5rem;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+#developer-quotes > #quote {
+  padding: 2.5rem;
+  color: var(--primary-light);
+  background: var(--primary);
+  border-radius: 0 0.7rem 0.7rem 0.7rem;
+}
+
+#quote q::before, #quote q::after {
+  font-size: 20px;
+}
+
+#quote > #author {
+  font-weight: bolder;
+  text-align: right;
+  font-style: italic;
+}
+/*Project List*/
 
 /*Contact*/
 

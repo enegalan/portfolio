@@ -15,8 +15,8 @@ export default function DeveloperSVG() {
         return () => clearInterval(intervalId); // Limpia el intervalo al desmontar el componente
     }, []);
     return (
-        <div class="main-container">
-            <div class="container">
+        <div className="main-container">
+            <div className="container">
                 <div>
                     <svg x="0px" y="0px" width="1280px"
                         height="1024px">
