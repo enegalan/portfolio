@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 const DeveloperQuotes = () => {
     const [quote, setQuote] = useState('');
     const [author, setAuthor] = useState('');
-    const [error, setError] = useState(null);
     const isMounted = useRef(false);
 
     useEffect(() => {
@@ -18,7 +17,6 @@ const DeveloperQuotes = () => {
                     setQuote(data.content);
                     setAuthor(data.author);
                 } catch (error) {
-                    setError(error.message);
                     console.error('Error fetching quote:', error);
                 }
             };

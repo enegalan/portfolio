@@ -107,6 +107,7 @@ header .container {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.2rem;
+  padding: 0.6rem;
 }
 
 #tools-list div {
@@ -135,6 +136,9 @@ header .container {
 }
 
 #developer-quotes > #quote {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   padding: 2.5rem;
   color: var(--primary-light);
   background: var(--primary);
@@ -150,11 +154,72 @@ header .container {
   text-align: right;
   font-style: italic;
 }
-/*Project List*/
 
 /*Contact*/
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem
 
-/*About*/
+}
+
+#contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  width: 40vw;
+  text-align: center;
+  line-height: 2rem;
+}
+
+#contact-info ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#contact-info ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+#contact-info a {
+  color: var(--primary-light);
+}
+
+#contact-info img {
+  filter: invert();
+  width: 4.5rem;
+  transition: .5s ease-in;
+}
+
+#contact-info li a {
+  transition: .1s ease-in;
+}
+
+#contact-info li a:hover {
+  transform: scale(1.1);
+}
+
+#contact-info li#mail a {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+#contact-info li#mail a:hover {
+  transform: none !important;
+  color: var(--primary);
+}
+
+
 
 
 @media screen and (max-width: 1200px) {
@@ -168,5 +233,22 @@ header .container {
 
   header h1 p b {
     font-size: 3.4rem;
+  }
+
+  header .main-container svg{
+    height: 1520px;
+  }
+
+  header > div {
+    width: 100% !important;
+  }
+
+  #contact-info {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+  }
+  .scene-container {
+    height: 660px !important;
   }
 }

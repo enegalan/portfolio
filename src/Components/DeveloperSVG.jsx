@@ -1,4 +1,3 @@
-import { light } from '@mui/material/styles/createPalette';
 import React, { useEffect, useState } from 'react';
 
 export default function DeveloperSVG() {

@@ -2,21 +2,6 @@ import React from 'react';
 import Timeline from './Timeline';
 
 const ProjectList = () => {
-    const project2s = [
-        {
-            id: 1,
-            title: 'Simple Calculator',
-            description: 'A Javascript simple calculator using eval function.',
-            url: 'https://www.ejemplo.com/proyecto1',
-        },
-        {
-            id: 2,
-            title: 'TechMobile Project',
-            description: 'Mobilephones e-commerce shop project.',
-            url: 'https://www.ejemplo.com/proyecto2',
-        },
-    ];
-
     const projects = [{
         '2021': [{
             'JUN': {
