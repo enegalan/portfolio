@@ -44,7 +44,7 @@ const ProjectList = () => {
     }];
 
     return (
-        <section>
+        <section style={{ overflow: 'hidden' }}>
             <Timeline elements={projects} />
         </section>
     );

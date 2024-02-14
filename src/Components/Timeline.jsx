@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import '../css/Timeline.css';
 import { Button } from "@mui/material";
+import AOS from 'aos';
 
 const Timeline = ({ elements = [{ '1234': [{ 'FEB': { 'title': 'This is a title test', 'body': 'This is a default body test for describe the project', 'href': '#', 'image': '' }, 'MAY': { 'title': 'This is a title test', 'body': 'This is a default body test for describe the project', 'href': '#', 'image': '' } }], '2345': [{ 'FEB': { 'title': 'This is a title test', 'body': 'This is a default body test for describe the project', 'href': '#', 'image': '' }, 'MAY': { 'title': 'This is a title test', 'body': 'This is a default body test for describe the project', 'href': '#', 'image': '' } }] }] }) => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true
+        });
+    }, []);
     return (
-        <div id="timeline" className="page" data-uia-timeline-skin="4" data-uia-timeline-adapter-skin-4="ui-card-skin-#1">
+        <div data-aos="fade-left" id="timeline" className="page" data-uia-timeline-skin="4" data-uia-timeline-adapter-skin-4="ui-card-skin-#1">
             <div className="uia-timeline">
                 <div className="uia-timeline__container">
                     <div className="uia-timeline__line"></div>

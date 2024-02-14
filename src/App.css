@@ -26,6 +26,18 @@ header {
   flex-wrap: wrap;
   padding-left: 2rem;
   padding-right: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+#side-dots {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: -10%;
+  transform: rotate(90deg);
 }
 
 header > div > p {
@@ -107,7 +119,7 @@ header .container {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.2rem;
-  padding: 0.6rem;
+  padding: 0.5rem;
 }
 
 #tools-list div {

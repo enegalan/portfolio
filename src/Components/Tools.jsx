@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
 
 const Tools = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true
+        });
+    }, []);
     const tools = [
         { name: 'Redis', icon: "/images/tools/redis.svg" },
         { name: 'MySQL', icon: '/images/tools/mysql.svg' },
@@ -40,7 +48,7 @@ const Tools = () => {
     return (
         <div id="tools-list">
             {tools.map((tool, index) => (
-                <div key={index}>
+                <div data-aos="fade-up" key={index}>
                     <img src={tool.icon} alt={tool.name} style={tool.style} />
                     <span>{tool.name}</span>
                 </div>

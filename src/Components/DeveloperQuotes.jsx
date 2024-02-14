@@ -1,10 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
+import AOS from 'aos';
 
 const DeveloperQuotes = () => {
     const [quote, setQuote] = useState('');
     const [author, setAuthor] = useState('');
     const isMounted = useRef(false);
-
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true
+        });
+    }, []);
     useEffect(() => {
         if (!isMounted.current) {
             const fetchQuoteFromAPI = async () => {
@@ -27,7 +34,7 @@ const DeveloperQuotes = () => {
     }, []);
 
     return (
-        <div id="developer-quotes">
+        <div data-aos="fade-down" id="developer-quotes">
             <div id='quote'>
                 <q>{quote}</q>
                 <div id="author">
