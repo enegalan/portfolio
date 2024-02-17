@@ -13,6 +13,9 @@ function App() {
   return (
     <>
       <Header />
+      <div id="tools-tech-section">
+        <h2>Tools and Technologies</h2>
+      </div>
       <Tools />
       <DeveloperQuotes />
       <ProjectList />

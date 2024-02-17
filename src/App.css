@@ -143,8 +143,8 @@ header .container {
   color: white;
   margin-top: 10.5rem;
   margin-bottom: 10.5rem;
-  padding-left: 30%;
-  padding-right: 30%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 #developer-quotes > #quote {
@@ -186,6 +186,7 @@ header .container {
   width: 40vw;
   text-align: center;
   line-height: 2rem;
+  z-index: 20;
 }
 
 #contact-info ul {
@@ -231,7 +232,14 @@ header .container {
   color: var(--primary);
 }
 
+#tools-tech-section {
+  text-align: center;
+  margin-bottom: 20%;
+}
 
+#tools-tech-section h2 {
+  font-size: 2.5rem;
+}
 
 
 @media screen and (max-width: 1200px) {
@@ -255,12 +263,26 @@ header .container {
     width: 100% !important;
   }
 
-  #contact-info {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: 100%;
+  #contact {
+    margin-top: -20%;
   }
+
+  #contact-info {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;;
+  }
+  
   .scene-container {
     height: 660px !important;
+  }
+
+  #developer-quotes {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  #tools-tech-section {
+    margin-top: -25%;
   }
 }

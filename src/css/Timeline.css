@@ -204,7 +204,7 @@
 
 .uia-card__body img {
     max-height: 300px;
-    max-width: 500px;
+    width: 100%;
     border-radius: 0.7rem;
     box-shadow: #00000066 6px 7px 1px;
 }
