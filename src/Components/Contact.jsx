@@ -1,7 +1,5 @@
 import React from 'react';
 import World from './World';
-import { width } from '@mui/system';
-
 
 const Contact = () => {
     return (

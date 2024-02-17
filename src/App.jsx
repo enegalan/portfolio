@@ -1,7 +1,7 @@
 import './App.css';
 import 'aos/dist/aos.css';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Header from './Components/Header';
 import Tools from './Components/Tools';
