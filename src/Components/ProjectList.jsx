@@ -8,13 +8,13 @@ const ProjectList = () => {
                 'title': 'Simple calculator',
                 'body': 'A simple Javascript styled calculator',
                 'href': 'https://enegalan.github.io/simplecalculator/',
-                'image': '/images/projects/simplecalculator.png'
+                'image': 'images/projects/simplecalculator.png'
             },
             'MAY': {
                 'title': 'TechMobile',
                 'body': 'Smartphone eCommerce for smartphones',
                 'href': 'https://github.com/enegalan/TechMobileProject',
-                'image': '/images/projects/techmobile.png'
+                'image': 'images/projects/techmobile.png'
             }
         }],
         '2022': [{
@@ -22,7 +22,7 @@ const ProjectList = () => {
                 'title': 'NorthClassic',
                 'body': 'Musical culture website design',
                 'href': 'https://enegalan.github.io/musicproject/',
-                'image': '/images/projects/northclassic.png'
+                'image': 'images/projects/northclassic.png'
             },
         }],
         '2023': [{
@@ -38,7 +38,7 @@ const ProjectList = () => {
                 'title': 'PrintHub',
                 'body': '3D Printing service provider, including e-commerce and STL file uploader and scanner for buying your own pieces. Made with React, tailwindcss and Laravel + Inertia',
                 'href': 'https://github.com/enegalan/printhub',
-                'image': '/images/projects/printhub.png',
+                'image': 'images/projects/printhub.png',
             }
         }]
     }];
