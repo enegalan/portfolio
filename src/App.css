@@ -1,8 +1,39 @@
 @import url('css/Colors.css');
+
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  padding: 0;
+  scrollbar-width: auto;
+  scrollbar-color: #102370;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #ffffff00;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #242d4200;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #464d61;
+  background-clip: padding-box;
+  border: 2px solid #242d4200;
+  border-radius: 30px;
+}
+
+::selection {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
