@@ -16,7 +16,7 @@ const DeveloperQuotes = () => {
         if (!isMounted.current) {
             const fetchQuoteFromAPI = async () => {
                 try {
-                    const response = await fetch('http://api.quotable.io/random?tags=technology');
+                    const response = await fetch('https://api.quotable.io/random?tags=technology');
                     if (!response.ok) {
                         throw new Error('Failed to fetch');
                     }
