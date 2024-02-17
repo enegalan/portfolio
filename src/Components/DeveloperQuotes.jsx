@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import AOS from 'aos';
+import HoverText from './HoverText';
 
 const DeveloperQuotes = () => {
     const [quote, setQuote] = useState('');
@@ -38,7 +39,7 @@ const DeveloperQuotes = () => {
             <div id='quote'>
                 <q>{quote}</q>
                 <div id="author">
-                    <p>- {author}</p>
+                    <p>- {<HoverText string={author} style={{ fontSize: '1.10rem' }}/>}</p>
                 </div>
             </div>
         </div>

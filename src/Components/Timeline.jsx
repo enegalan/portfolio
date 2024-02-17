@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import '../css/Timeline.css';
 import { Button } from "@mui/material";
 import AOS from 'aos';
+import HoverText from "./HoverText";
 
 const Timeline = ({ elements = [{ '1234': [{ 'FEB': { 'title': 'This is a title test', 'body': 'This is a default body test for describe the project', 'href': '#', 'image': '' }, 'MAY': { 'title': 'This is a title test', 'body': 'This is a default body test for describe the project', 'href': '#', 'image': '' } }], '2345': [{ 'FEB': { 'title': 'This is a title test', 'body': 'This is a default body test for describe the project', 'href': '#', 'image': '' }, 'MAY': { 'title': 'This is a title test', 'body': 'This is a default body test for describe the project', 'href': '#', 'image': '' } }] }] }) => {
     useEffect(() => {
@@ -38,7 +39,7 @@ const Timeline = ({ elements = [{ '1234': [{ 'FEB': { 'title': 'This is a title 
                                                                     </span>
                                                                 </div>
                                                                 <div className="timeline-title">
-                                                                    <h2>{monthValue.title}</h2>
+                                                                    <HoverText style={{ fontSize: '1.5rem', fontWeight: 'bolder' }} string={monthValue.title} />
                                                                 </div>
                                                                 <div className="uia-card__body">
                                                                     <div>
@@ -46,7 +47,7 @@ const Timeline = ({ elements = [{ '1234': [{ 'FEB': { 'title': 'This is a title 
                                                                     </div>
                                                                     <div className="uia-card__description">
                                                                         <p>{monthValue.body}</p>
-                                                                        <Button color="secondary" variant="outlined" href={monthValue.href} children={'See more'}/>
+                                                                        <Button color="secondary" variant="outlined" href={monthValue.href} children={'See more'} />
                                                                     </div>
                                                                 </div>
                                                             </div>

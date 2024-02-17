@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 import DeveloperSVG from "./DeveloperSVG";
 import AOS from 'aos';
+import HoverText from './HoverText';
 
 export default function Header() {
     useEffect(() => {
@@ -18,7 +19,7 @@ export default function Header() {
             <div data-aos="fade-up">
                 <h1>
                     <span>Hey! I'm Eneko Galan</span>
-                    <p>DevOps <b>{"<"}Web Developer{" />"}</b></p>
+                    <p><HoverText string='DevOps' /> <b>{"<"}<HoverText string='Web Developer' />{" />"}</b></p>
                 </h1>
                 <p>Hello! I am a dedicated individual with a passion for new technologies. My experience covers several areas of the technology sector, meeting all the needs of an application throughout its life cycle, from development to deployment.</p>
             </div>
