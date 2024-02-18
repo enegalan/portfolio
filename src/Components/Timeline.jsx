@@ -47,7 +47,7 @@ const Timeline = ({ elements = [{ '1234': [{ 'FEB': { 'title': 'This is a title 
                                                                     </div>
                                                                     <div className="uia-card__description">
                                                                         <p>{monthValue.body}</p>
-                                                                        <Button color="secondary" variant="outlined" href={monthValue.href} children={'See more'} />
+                                                                        <Button target="_blank" color="secondary" variant="outlined" href={monthValue.href} children={'See more'} />
                                                                     </div>
                                                                 </div>
                                                             </div>
