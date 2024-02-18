@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 
-import DeveloperSVG from "./DeveloperSVG";
 import AOS from 'aos';
 import HoverText from './HoverText';
 import DevPC from './icons/DevPC';
@@ -26,7 +25,6 @@ export default function Header() {
             </div>
             <div style={{ paddingTop: '1.5rem', display: 'flex', justifyContent: 'center' }} data-aos="fade-left">
                 <DevPC />
-                {/*<DeveloperSVG /> */}
             </div>
         </header>
     );
