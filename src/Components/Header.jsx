@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import DeveloperSVG from "./DeveloperSVG";
 import AOS from 'aos';
 import HoverText from './HoverText';
+import DevPC from './icons/DevPC';
 
 export default function Header() {
     useEffect(() => {
@@ -23,8 +24,9 @@ export default function Header() {
                 </h1>
                 <p>Hello! I am a dedicated individual with a passion for new technologies. My experience covers several areas of the technology sector, meeting all the needs of an application throughout its life cycle, from development to deployment.</p>
             </div>
-            <div data-aos="fade-left">
-                <DeveloperSVG />
+            <div style={{ paddingTop: '1.5rem', display: 'flex', justifyContent: 'center' }} data-aos="fade-left">
+                <DevPC />
+                {/*<DeveloperSVG /> */}
             </div>
         </header>
     );

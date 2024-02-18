@@ -89,7 +89,7 @@ header>div:first-of-type {
 }
 
 header>div:nth-of-type(2) {
-  width: 30%;
+  width: 35%;
 }
 
 header h1 {
@@ -375,9 +375,5 @@ header .container {
   #developer-quotes {
     padding-left: 3rem;
     padding-right: 3rem;
-  }
-
-  #tools-tech-section {
-    margin-top: -25%;
   }
 }
