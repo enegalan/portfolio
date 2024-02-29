@@ -16,8 +16,8 @@ const Contact = () => {
                             <a href="mailto:enekogalanelorza@gmail.com">enekogalanelorza@gmail.com</a>
                         </li>
                         <li>
-                            <a href="https://github.com/enegalan" target="_blank" rel="noopener noreferrer"><GithubIcon /></a>
-                            <a href="https://www.linkedin.com/in/eneko-galan/" target="_blank" rel="noopener noreferrer"><LinkedinIcon style={{ height: '3rem' }} /></a>
+                            <a href="https://github.com/enegalan" target="_blank" rel="noopener noreferrer" title="Visit my GitHub profile"><GithubIcon /></a>
+                            <a href="https://www.linkedin.com/in/eneko-galan/" target="_blank" rel="noopener noreferrer" title="Visit my Linkedin profile"><LinkedinIcon style={{ height: '3rem' }} /></a>
                         </li>
                     </ul>
                 </div>

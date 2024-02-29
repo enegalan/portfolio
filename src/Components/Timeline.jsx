@@ -31,7 +31,6 @@ const Timeline = ({ elements = [{ '1234': [{ 'FEB': { 'title': 'This is a title 
                                                         <div className="uia-timeline__point uia-card" data-uia-card-skin="1" data-uia-card-mod="1">
                                                             <div className="uia-card__container">
                                                                 <div className="uia-card__intro">
-                                                                    <h3 id={`timeline-demo-4-heading-${yearIndex + 1}`} className="ra-heading ha-screen-reader">{monthKey}2123123123</h3>
                                                                     <span className="uia-card__time">
                                                                         <time>
                                                                             <span>{monthKey}</span>
@@ -43,11 +42,11 @@ const Timeline = ({ elements = [{ '1234': [{ 'FEB': { 'title': 'This is a title 
                                                                 </div>
                                                                 <div className="uia-card__body">
                                                                     <div>
-                                                                        {monthValue.image !== '' ? (<img src={monthValue.image} alt={`Event ${monthKey}`} />) : ('')}
+                                                                        {monthValue.image !== '' ? (<img src={monthValue.image} alt={`${monthValue.title}`} />) : ('')}
                                                                     </div>
                                                                     <div className="uia-card__description">
                                                                         <p>{monthValue.body}</p>
-                                                                        <Button target="_blank" color="secondary" variant="outlined" href={monthValue.href} children={'See more'} />
+                                                                        <Button target="_blank" color="secondary" variant="outlined" aria-description={'Check ' + monthValue.title} href={monthValue.href} children={'See more'} />
                                                                     </div>
                                                                 </div>
                                                             </div>

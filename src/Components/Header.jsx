@@ -15,7 +15,7 @@ export default function Header() {
 
     return (
         <header>
-            <img id="side-dots" src="images/side-dots.png" alt="Side dots" data-aos="fade-right" />
+            <img rel='preload' id="side-dots" src="images/side-dots.png" alt="Side dots" data-aos="fade-right" />
             <div data-aos="fade-up">
                 <h1>
                     <span>Hey! I'm Eneko Galan</span>
