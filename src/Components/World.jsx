@@ -7,6 +7,20 @@ import * as THREE from 'three';
 const World = () => {
     const globeEl = useRef();
 
+    const isMobile = () => {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobileKeywords = ['iphone', 'android', 'windows phone', 'blackberry', 'ipad', 'ipod'];
+        let isMobile = false;
+        if (window.innerWidth < 1200) {
+            for (let keyword of mobileKeywords) {
+                if (userAgent.indexOf(keyword) !== -1) {
+                    isMobile = true;
+                }
+            }
+        }
+        return isMobile;
+    }
+
     useEffect(() => {
         globeEl.current.controls().autoRotate = true;
         globeEl.current.controls().autoRotateSpeed = 0.7;
@@ -22,7 +36,24 @@ const World = () => {
         const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
         hemisphereLight.position.set(0, 0, 0);
         globeEl.current.scene().add(hemisphereLight);
+
+        const handleResize = () => {
+            if (isMobile()) {
+                console.log("is mobile");
+            } else console.log("is not mobile")
+            globeEl.current.controls().enabled  = !isMobile();
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
+
+    
     return (
         <Globe
             ref={globeEl}

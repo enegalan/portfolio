@@ -38,14 +38,14 @@ const Timeline = ({ elements }) => {
                                                                     </span>
                                                                 </div>
                                                                 <div className="timeline-title">
-                                                                    <HoverText style={{ fontSize: '1.5rem', fontWeight: 'bolder' }} string={monthValue.title} />
+                                                                    <HoverText style={{ fontSize: '1.25rem', fontWeight: 'bolder' }} string={monthValue.title} />
                                                                 </div>
                                                                 <div className="uia-card__body">
                                                                     <div>
                                                                         {monthValue.image !== '' ? (<img src={monthValue.image} alt={`${monthValue.title}`} />) : ('')}
                                                                     </div>
                                                                     <div className="uia-card__description">
-                                                                        <p>{monthValue.body}</p>
+                                                                        <p style={{ fontSize: '0.8rem' }}>{monthValue.body}</p>
                                                                         <Button target="_blank" color="secondary" variant="outlined" aria-description={'Check ' + monthValue.title} href={monthValue.href} children={'See more'} />
                                                                     </div>
                                                                 </div>

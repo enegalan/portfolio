@@ -15,7 +15,7 @@ function App() {
     <>
       <Header />
       <div id="tools-tech-section">
-        <HoverText style={{ fontSize: '2rem' }} string='Tools and Technologies' />
+        <HoverText style={{ fontSize: '2rem', textWrap: 'balance' }} string='Tools and Technologies' />
       </div>
       <Tools />
       <DeveloperQuotes />

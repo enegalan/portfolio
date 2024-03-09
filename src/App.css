@@ -170,6 +170,7 @@ header .container {
   text-align: center;
   gap: 10px;
   min-height: 120px;
+  align-items: center;
 }
 
 #tools-list svg {
