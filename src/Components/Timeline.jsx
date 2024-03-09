@@ -4,12 +4,12 @@ import { Button } from "@mui/material";
 import AOS from 'aos';
 import HoverText from "./HoverText";
 
-const Timeline = ({ elements = [{ '1234': [{ 'FEB': { 'title': 'This is a title test', 'body': 'This is a default body test for describe the project', 'href': '#', 'image': '' }, 'MAY': { 'title': 'This is a title test', 'body': 'This is a default body test for describe the project', 'href': '#', 'image': '' } }], '2345': [{ 'FEB': { 'title': 'This is a title test', 'body': 'This is a default body test for describe the project', 'href': '#', 'image': '' }, 'MAY': { 'title': 'This is a title test', 'body': 'This is a default body test for describe the project', 'href': '#', 'image': '' } }] }] }) => {
+const Timeline = ({ elements }) => {
     useEffect(() => {
         AOS.init({
             duration: 1000,
-            once: false,
-            mirror: true
+            once: true,
+            mirror: false,
         });
     }, []);
     return (

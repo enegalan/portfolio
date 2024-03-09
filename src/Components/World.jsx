@@ -1,5 +1,7 @@
 import Globe from 'react-globe.gl';
 import { useRef, useEffect } from 'react';
+import * as THREE from 'three';
+
 
 
 const World = () => {
@@ -13,8 +15,13 @@ const World = () => {
 
         globeEl.current.controls().enableZoom = false;
 
-        const directionalLight = globeEl.current.lights().find(obj3d => obj3d.type === 'DirectionalLight');
-        directionalLight && directionalLight.position.set(-5, 5, 2);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+        directionalLight.position.set(-5, 5, 2);
+        globeEl.current.scene().add(directionalLight);
+
+        const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
+        hemisphereLight.position.set(0, 0, 0);
+        globeEl.current.scene().add(hemisphereLight);
     }, []);
     return (
         <Globe
@@ -22,7 +29,7 @@ const World = () => {
             showAtmosphere={false}
             backgroundColor='#00000000'
             bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-            width="500"
+            width={500}
             globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         />);
 }

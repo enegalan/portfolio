@@ -932,7 +932,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     id="g260">
                     <g
-                        clip-path="url(#clipPath266)"
+                        clipPath="url(#clipPath266)"
                         id="g262" />
                     </g>
                     <path
@@ -2958,7 +2958,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     id="g1302">
                     <g
-                        clip-path="url(#clipPath1308)"
+                        clipPath="url(#clipPath1308)"
                         id="g1304">
                         <g
                         transform="scale(2.14024)"
@@ -3205,7 +3205,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     id="g1430">
                     <g
-                        clip-path="url(#clipPath1436)"
+                        clipPath="url(#clipPath1436)"
                         id="g1432">
                         <g
                         transform="scale(2.01591)"
@@ -5540,7 +5540,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     id="g2602">
                     <g
-                        clip-path="url(#clipPath2608)"
+                        clipPath="url(#clipPath2608)"
                         id="g2604">
                         <g
                         transform="scale(2.09641)"
@@ -6991,7 +6991,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     id="g3332">
                     <g
-                        clip-path="url(#clipPath3338)"
+                        clipPath="url(#clipPath3338)"
                         id="g3334">
                         <g
                         transform="scale(1.38007)"
@@ -7858,7 +7858,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.36965)"
                     id="g3770"
-                    class="float">
+                    className="float">
                     { /* Left < Background */ }
                     <path
                         id="path3772"
@@ -7868,7 +7868,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.3516)"
                     id="g3774"
-                    class="float">
+                    className="float">
                     { /* Center / Background */ }
                     <path
                         id="path3776"
@@ -7878,7 +7878,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.28588)"
                     id="g3778"
-                    class="float">
+                    className="float">
                     { /* Right > Background */ }
                     <path
                         id="path3780"
@@ -7888,7 +7888,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.26991)"
                     id="g3782"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover left < */}
                     <path
                         id="path3784"
@@ -7898,7 +7898,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.27143)"
                     id="g3786"
-                    class="float">
+                    className="float">
                     <path
                         id="path3788"
                         d="m 7657.27,15409.3 12.31,12.9 -833.07,796.3 v 2.9 h -17.81 l -3.29,-17.5 838.57,-157.9 c 4.19,-0.8 8.49,0 12.19,2.2 l 365.03,210.4 403.4,-385.8 -786.14,-448 8.81,-15.5 12.31,12.9 -12.31,-12.9 8.82,-15.5 806.89,459.9 c 4.96,2.9 8.18,7.7 8.89,13.3 0.71,5.7 -1.26,11.2 -5.35,15.1 l -430.3,411.4 c -5.74,5.5 -14.39,6.5 -21.24,2.6 l -370.89,-213.8 -832.1,156.6 c -5.19,1 -10.59,-0.4 -14.66,-3.8 -4.07,-3.4 -6.44,-8.4 -6.44,-13.7 v -10.5 c 0,-4.9 1.97,-9.5 5.5,-12.8 l 838.57,-801.7 c 5.68,-5.5 14.31,-6.5 21.13,-2.6 l -8.82,15.5"
@@ -7907,7 +7907,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.23783)"
                     id="g3790"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover left < */}
                     <path
                         id="path3792"
@@ -7917,7 +7917,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.23928)"
                     id="g3794"
-                    class="float">
+                    className="float">
                     <path
                         id="path3796"
                         d="m 8683.74,16280.9 h -18.24 v -542 l -791.34,-451 0.01,510.4 818.6,466.7 -9.03,15.9 h -18.24 18.24 l -9.04,15.9 -827.84,-471.9 c -5.73,-3.3 -9.23,-9.4 -9.23,-15.9 v -552.6 c 0,-6.4 3.44,-12.5 9.09,-15.7 5.64,-3.3 12.55,-3.3 18.22,-0.1 l 827.83,471.9 c 5.73,3.2 9.28,9.3 9.28,15.9 v 552.5 c 0,6.5 -3.47,12.5 -9.12,15.8 -5.64,3.2 -12.58,3.3 -18.23,0.1 l 9.04,-15.9"
@@ -7926,7 +7926,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.34196)"
                     id="g3798"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover left < */}
                     <path
                         id="path3800"
@@ -7936,7 +7936,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.34337)"
                     id="g3802"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover left < */}
                     <path
                         id="path3804"
@@ -7946,7 +7946,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.33074)"
                     id="g3806"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover left < */}
                     <path
                         id="path3808"
@@ -7956,7 +7956,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.33219)"
                     id="g3810"
-                    class="float">
+                    className="float">
                     <path
                         id="path3812"
                         d="m 8078.13,16282.2 h -16.97 v -502.4 l -736.14,-419.6 v 473.1 l 761.51,434.1 -8.4,14.8 h -16.97 16.97 l -8.41,14.8 -770.11,-439.1 c -5.33,-3 -8.58,-8.6 -8.58,-14.7 v -512.3 c 0,-6.1 3.21,-11.6 8.46,-14.7 5.25,-3.1 11.68,-3.1 16.95,-0.1 l 770.09,439 c 5.33,3.1 8.63,8.6 8.63,14.8 v 512.3 c 0,6.1 -3.22,11.6 -8.48,14.7 -5.25,3 -11.71,3.1 -16.96,0.1 l 8.41,-14.8"
@@ -7965,7 +7965,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.30748)"
                     id="g3814"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover center / */}
                     <path
                         id="path3816"
@@ -7975,7 +7975,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.30898)"
                     id="g3818"
-                    class="float">
+                    className="float">
                     <path
                         id="path3820"
                         d="m 7915.73,13565.1 8.56,-15 783.82,446.7 c 3.67,2.2 6.57,5.7 7.87,9.7 l 734.85,2269.6 c 2.21,6.9 0,14.3 -5.5,18.8 -5.58,4.5 -13.3,5.1 -19.56,1.6 l -783.74,-446.8 c -3.75,-2.1 -6.57,-5.6 -7.87,-9.7 l -734.85,-2269.5 c -2.22,-6.8 0,-14.3 5.5,-18.8 5.58,-4.5 13.29,-5.1 19.48,-1.6 l -8.56,15 16.51,-5.3 732.7,2263.2 739.21,421.3 -719.04,-2220.7 -777.93,-443.4 8.55,-15.1 16.51,-5.3 -16.51,5.3"
@@ -7984,7 +7984,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.32391)"
                     id="g3822"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover center / */}
                     <path
                         id="path3824"
@@ -7994,7 +7994,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.32536)"
                     id="g3826"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover center / */}
                     <path
                         id="path3828"
@@ -8004,7 +8004,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.30607)"
                     id="g3830"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover left < */}
                     <path
                         id="path3832"
@@ -8014,7 +8014,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.3075)"
                     id="g3834"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover left < */}
                     <path
                         id="path3836"
@@ -8024,7 +8024,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.28802)"
                     id="g3838"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover center / */}
                     <path
                         id="path3840"
@@ -8034,7 +8034,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.28947)"
                     id="g3842"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover center / */}
                     <path
                         id="path3844"
@@ -8044,7 +8044,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.25818)"
                     id="g3846"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover right > */}
                     <path
                         id="path3848"
@@ -8054,7 +8054,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.25971)"
                     id="g3850"
-                    class="float">
+                    className="float">
                     <path
                         id="path3852"
                         d="m 11524.4,14860.4 13,12.4 -1355.4,1420 c -5.7,5.9 -14.8,7.2 -21.9,3.2 l -814.5,-464.3 c -4.77,-2.8 -8.02,-7.5 -8.9,-13 -0.79,-5.5 1.04,-11 4.85,-15 l 1355.35,-1420 c 5.8,-6 14.8,-7.3 22,-3.2 l 814.4,464.2 c 4.8,2.7 8.1,7.6 8.9,13.1 0.8,5.4 -1,11 -4.8,15 l -13,-12.4 -8.9,15.5 -802.2,-457.2 -1329.92,1393.2 782.22,445.9 1345.8,-1409.9 13,12.5 -8.9,15.5 8.9,-15.5"
@@ -8063,7 +8063,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.14845)"
                     id="g3854"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover right > */}
                     <path
                         id="path3856"
@@ -8073,7 +8073,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.1499)"
                     id="g3858"
-                    class="float">
+                    className="float">
                     <path
                         id="path3860"
                         d="m 11732.7,15254.9 9.8,-17.1 892.2,508.6 c 6.2,3.5 9.9,10.1 9.9,17.1 v 516 c 0,7 -3.7,13.5 -9.8,16.9 -6.1,3.6 -13.5,3.6 -19.6,0.1 L 11723,15788 c -6.2,-3.5 -9.9,-10 -9.9,-17.1 v -516 c 0,-7 3.6,-13.4 9.7,-17 6.1,-3.6 13.6,-3.6 19.7,-0.1 l -9.8,17.1 h 19.8 v 504.5 l 852.7,486.2 V 15775 l -882.2,-502.9 9.7,-17.2 h 19.8 -19.8"
@@ -8082,7 +8082,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.14823)"
                     id="g3862"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover right > */}
                     <path
                         id="path3864"
@@ -8092,7 +8092,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.14975)"
                     id="g3866"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover right > */}
                     <path
                         id="path3868"
@@ -8102,7 +8102,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.22231)"
                     id="g3870"
-                    class="hoverable float">
+                    className="hoverable float">
                     {/* Hover right > */}
                     <path
                         id="path3872"
@@ -8112,7 +8112,7 @@ const DevPC = ({ style = {} }) => {
                     <g
                     transform="scale(1.22381)"
                     id="g3874"
-                    class="float">
+                    className="float">
                     <path
                         id="path3876"
                         d="m 9628.95,15722.3 h 18.46 v 511.5 L 11005.6,14811 v -456.8 l -1358.19,145.4 v 520.4 l 849.09,-168.8 c 5.5,-1 11.1,0.4 15.3,3.9 4.4,3.6 6.8,8.7 6.8,14.3 v 10.9 c 0,5 -2,9.8 -5.6,13.4 l -871.23,841.9 -12.82,-13.3 h 18.46 -18.46 l -12.92,-13.3 865.57,-836.5 v -3.1 h 18.5 l 3.7,18.2 -871.26,173.1 c -5.47,1 -11.11,-0.4 -15.36,-3.9 -4.33,-3.5 -6.78,-8.7 -6.78,-14.3 V 14483 c 0,-9.4 7.19,-17.4 16.5,-18.4 l 1395.2,-149.4 c 5.3,-0.6 10.5,1.2 14.4,4.7 3.9,3.4 6.1,8.5 6.1,13.7 v 484.8 c 0,4.7 -1.8,9.3 -5.1,12.7 l -1395.23,1461.6 c -5.15,5.5 -13.24,7.3 -20.27,4.4 -6.95,-2.7 -11.6,-9.6 -11.6,-17.1 v -557.7 c 0,-5 2.04,-9.8 5.63,-13.3 l 12.92,13.3"

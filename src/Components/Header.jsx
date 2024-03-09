@@ -8,8 +8,8 @@ export default function Header() {
     useEffect(() => {
         AOS.init({
             duration: 1000,
-            once: false,
-            mirror: true
+            once: true,
+            mirror: false,
         });
     }, []);
 
@@ -21,7 +21,7 @@ export default function Header() {
                     <span>Hey! I'm Eneko Galan</span>
                     <p><HoverText string='DevOps' /> <b>{"<"}<HoverText string='Web Developer' />{" />"}</b></p>
                 </h1>
-                <p>Hello! I am a dedicated individual with a passion for new technologies. My experience covers several areas of the technology sector, meeting all the needs of an application throughout its life cycle, from development to deployment.</p>
+                <p>Hello! I am a dedicated individual with a passion for new technologies. My experience covers several areas of the technology sector, meeting all the needs of an application throughout its lifecycle, from development to deployment.</p>
             </div>
             <div style={{ paddingTop: '1.5rem', display: 'flex', justifyContent: 'center' }} data-aos="fade-left">
                 <DevPC />
