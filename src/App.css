@@ -140,13 +140,13 @@ header .container {
 }
 
 #allmulti>polygon {
-  fillOpacity: 0.05;
+  fill-opacity: 0.05;
   transition: opacity 1s ease;
 }
 
 .light {
   transition: opacity 1s ease;
-  fillOpacity: 0.2 !important;
+  fill-opacity: 0.2 !important;
 }
 
 /*Tools*/
@@ -213,7 +213,8 @@ header .container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem
+  gap: 1rem;
+  overflow: hidden;
 }
 
 #contact-info {
@@ -360,6 +361,11 @@ header .container {
     width: 100% !important;
   }
 
+  #side-dots {
+    top: 45%;
+    width: 25%;
+  }
+
   #contact {
     margin-top: -20%;
   }
@@ -368,7 +374,6 @@ header .container {
     padding-left: 2rem;
     padding-right: 2rem;
     width: 100%;
-    ;
   }
 
   .scene-container {
