@@ -2,7 +2,7 @@ import React from 'react';
 
 const GitIcon = ({ style = {} }) => {
     return (
-        <svg style={style} xmlns="http://www.w3.org/2000/svg" width="92pt" height="92pt" viewBox="0 0 92 92">
+        <svg style={style} viewBox="0 0 92 92" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <clipPath id="a">
                     <path d="M0 .113h91.887V92H0Zm0 0"/>

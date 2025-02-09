@@ -38,9 +38,6 @@ const World = () => {
         globeEl.current.scene().add(hemisphereLight);
 
         const handleResize = () => {
-            if (isMobile()) {
-                console.log("is mobile");
-            } else console.log("is not mobile")
             globeEl.current.controls().enabled  = !isMobile();
         };
 

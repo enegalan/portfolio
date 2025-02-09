@@ -159,17 +159,18 @@ header .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.2rem;
+  column-gap: 1.2rem;
+  row-gap: 3rem;
   padding: 0.5rem;
 }
 
 #tools-list div {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   gap: 10px;
-  min-height: 120px;
+  min-height: 90px;
   align-items: center;
 }
 

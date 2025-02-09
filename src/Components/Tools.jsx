@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 
-// Importar los componentes de iconos directamente
 import RedisIcon from './icons/RedisIcon';
 import MysqlIcon from './icons/MysqlIcon';
 import MariadbIcon from './icons/MariadbIcon';
@@ -49,12 +48,12 @@ const Tools = () => {
         height: '60px',
     }
     
-    const composer_style = {
+    const composerStyle = {
         width: '80px',
         height: '80px',
     }
 
-    const python_style = {
+    const pythonStyle = {
         width: '78px',
         height: '76px',
     }
@@ -74,10 +73,10 @@ const Tools = () => {
         { name: 'PHP', icon: <PhpIcon style={defaultStyle} /> },
         { name: 'Laravel', icon: <LaravelIcon style={defaultStyle} /> },
         { name: 'Node.js', icon: <NodejsIcon style={defaultStyle} /> },
-        { name: 'Python3', icon: <Python3Icon style={python_style} /> },
+        { name: 'Python3', icon: <Python3Icon style={pythonStyle} /> },
         { name: 'ExtJS', icon: <ExtjsIcon style={defaultStyle} /> },
         { name: 'RabbitMQ', icon: <RabbitmqIcon style={defaultStyle} /> },
-        { name: 'Composer', icon: <ComposerIcon style={composer_style} /> },
+        { name: 'Composer', icon: <ComposerIcon style={composerStyle} /> },
         { name: 'npm', icon: <NpmIcon style={defaultStyle} /> },
         { name: 'Docker', icon: <DockerIcon style={defaultStyle} /> },
         { name: 'Kubernetes', icon: <KubernetesIcon style={defaultStyle} /> },
