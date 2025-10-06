@@ -1,0 +1,370 @@
+---
+import { tools } from "../data/tools";
+import { FIRST_EXPERIENCE_YEAR } from "../data/constants";
+import { projects } from "../data/projects";
+import BlinkCursor from './BlinkCursor.astro';
+
+const yearsExperience = new Date().getFullYear() - FIRST_EXPERIENCE_YEAR;
+const technologiesCount = tools.length;
+const projectsCount = projects.length;
+---
+
+<section class="tools-section" id="tools">
+  <div class="tools-container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">
+        <span class="title-text">Tech Stack</span>
+        <BlinkCursor />
+        <div class="title-underline"></div>
+      </h2>
+      <p class="section-description">
+        Technologies and tools I use to build amazing digital experiences
+      </p>
+    </div>
+    <div class="tools-swiper-container">
+      <div class="swiper tools-swiper">
+        <div class="swiper-wrapper">
+          {tools.map((tool, index) => (
+            <div class="swiper-slide">
+              <div 
+                class="tool-card glass-card" 
+                data-category={tool.category}
+                style={`--tool-color: ${tool.color}`}
+              >
+                <div class="card-content">
+                  <div class="tool-icon-wrapper" set:html={tool.svg?.replace('<svg', `<svg class="tool-svg" style="--tool-color: ${tool.color}"`)} />
+                  <span class="tool-name">{tool.name}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    <div class="tools-footer" data-aos="fade-up" data-aos-delay="800">
+      <div class="experience-stats glass-card">
+        <div class="stat-item">
+          <div class="stat-number">{yearsExperience}+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{technologiesCount}</div>
+          <div class="stat-label">Technologies</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{projectsCount}+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tools-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .tools-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .tools-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .title-text {
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  }
+  .title-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+    border-radius: 2px;
+    margin: 1rem auto 0;
+    animation: expand-line 1s ease-out 0.5s both;
+    box-shadow: 0 0 10px var(--neon-cyan);
+  }
+  .section-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .tools-swiper-container {
+    width: 100%;
+    margin-bottom: 4rem;
+    position: relative;
+  }
+  .tools-swiper {
+    overflow: visible;
+    padding: 2rem 0;
+  }
+  .tools-swiper .swiper-wrapper { align-items: center; }
+  .tools-swiper .swiper-slide {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tool-card {
+    display: flex;
+    align-items: center;
+    height: 120px;
+    width: 120px;
+    min-width: 120px;
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  .tool-card:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 30px var(--tool-color);
+    border-color: var(--tool-color);
+  }
+  .card-content {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  .tool-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--tool-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px var(--tool-neon);
+  }
+  .tool-card:hover .tool-icon {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px var(--tool-neon);
+  }
+  .tool-icon-wrapper {
+    width: 50px;
+    height: 40px;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tool-icon-wrapper :global(.tool-svg) {
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease;
+    fill: var(--tool-color);
+  }
+  .tool-icon-wrapper :global(.tool-svg *) { fill: var(--tool-color); }
+  .tool-card:hover .tool-icon-wrapper :global(.tool-svg) {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 6px var(--tool-color));
+  }
+  .tool-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    line-height: 1.2;
+  }
+  .tool-details { width: 100%; }
+  .skill-level { margin-bottom: 1rem; }
+  .skill-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-primary);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  .skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+    border-radius: 3px;
+    width: var(--progress);
+    transition: width 0.8s ease-out;
+    box-shadow: 0 0 10px var(--neon-cyan);
+  }
+  .skill-percentage {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  .tool-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    text-align: center;
+  }
+  .tools-footer, .stat-item { text-align: center; }
+  .experience-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  }
+  .stat-label {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  @media (max-width: 768px) {
+    .tools-section { padding: 4rem 0; }
+    .tool-card {
+      height: 160px;
+      width: 160px;
+      min-width: 160px;
+    }
+    .card-content { padding: 1rem; }
+    .tool-icon-wrapper {
+      width: 50px;
+      height: 40px;
+      margin-bottom: 0.6rem;
+    }
+    .tool-name { font-size: 0.8rem; }
+    .card-front, .card-back { padding: 1.5rem; }
+    .experience-stats { gap: 2rem; }
+    .stat-number { font-size: 2.5rem; }
+  }
+  @media (max-width: 768px) {
+    .tools-swiper .swiper-slide {
+      width: 140px;
+      height: 140px;
+    }
+    .tool-card {
+      height: 140px;
+      width: 140px;
+      min-width: 140px;
+    }
+    .card-content { padding: 0.8rem; }
+    .tool-icon-wrapper {
+      width: 40px;
+      height: 32px;
+      margin-bottom: 0.5rem;
+    }
+    .tool-name { font-size: 0.75rem; }
+  }
+  @media (max-width: 480px) {
+    .tools-swiper .swiper-slide {
+      width: 120px;
+      height: 120px;
+    }
+    .tool-card {
+      height: 120px;
+      width: 120px;
+      min-width: 120px;
+    }
+    .card-content { padding: 0.6rem; }
+    .tool-icon-wrapper {
+      width: 35px;
+      height: 28px;
+      margin-bottom: 0.4rem;
+    }
+    .tool-name { font-size: 0.7rem; }
+    .experience-stats {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  // @ts-nocheck
+  import { Swiper } from 'swiper';
+  import { Autoplay, FreeMode } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/free-mode';
+  const swiper = new Swiper('.tools-swiper', {
+    modules: [Autoplay, FreeMode],
+    slidesPerView: 'auto',
+    freeMode: {
+      enabled: true,
+      momentum: true,
+      momentumRatio: 0.8,
+      momentumBounce: false,
+      sticky: false,
+    },
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+      reverseDirection: false,
+      stopOnLastSlide: false,
+    },
+    speed: 2000,
+    loop: true,
+    grabCursor: true,
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 12,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 16,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+      1280: {
+        slidesPerView: 5,
+        spaceBetween: 20,
+      },
+    }
+  });
+</script>

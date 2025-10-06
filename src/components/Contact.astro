@@ -1,0 +1,488 @@
+---
+import { FIRST_EXPERIENCE_YEAR } from "../data/constants";
+import { projects } from "../data/projects";
+import { tools } from "../data/tools";
+import BlinkCursor from './BlinkCursor.astro';
+
+const yearsExperience = new Date().getFullYear() - FIRST_EXPERIENCE_YEAR;
+const projectsCount = projects.length;
+const technologiesCount = tools.length;
+---
+
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">
+        <span class="title-text">Get In Touch</span>
+        <BlinkCursor />
+        <div class="title-underline"></div>
+      </h2>
+      <p class="section-description">
+        I'm always open to discussing new opportunities and exciting projects
+      </p>
+    </div>
+    <div class="contact-content">
+      <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+        <div class="info-card glass-card">
+          <h3>Get in Touch</h3>
+          <p>I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+          <div class="contact-methods">
+            <a href="mailto:enekogalanelorza@gmail.com" class="contact-method">
+              <div class="method-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="method-content">
+                <span class="method-label">Email</span>
+                <span class="method-value">enekogalanelorza@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://github.com/enegalan" target="_blank" rel="noopener noreferrer" class="contact-method">
+              <div class="method-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </div>
+              <div class="method-content">
+                <span class="method-label">GitHub</span>
+                <span class="method-value">github.com/enegalan</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/eneko-galan/" target="_blank" rel="noopener noreferrer" class="contact-method">
+              <div class="method-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </div>
+              <div class="method-content">
+                <span class="method-label">LinkedIn</span>
+                <span class="method-value">linkedin.com/in/eneko-galan</span>
+              </div>
+            </a>
+          </div>
+          <div class="availability">
+            <div class="status-indicator">
+              <div class="status-dot"></div>
+              <span>Available for new projects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="globe-container">
+        <div class="globe-wrapper">
+          <div data-aos="fade-left" data-aos-delay="400" id="globe-3d" class="globe-3d"></div>
+          <div data-aos="fade-left" data-aos-delay="200" class="globe-info glass-card">
+            <div class="globe-stats">
+              <div class="stat">
+                <span class="stat-number">{yearsExperience}+</span>
+                <span class="stat-label">Years</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">{projectsCount}+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">{Math.floor(technologiesCount / 10) * 10}+</span>
+                <span class="stat-label">Technologies</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  // @ts-nocheck
+  import * as THREE from 'three';
+  let scene, camera, renderer, globe, controls;
+  let animationId;
+  let isInitialized = false;
+  const initGlobe = () => {
+    if (isInitialized) return;
+    const container = document.getElementById('globe-3d');
+    if (!container) return;
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+    renderer = new THREE.WebGLRenderer({ 
+      alpha: true, 
+      antialias: true,
+      powerPreference: "high-performance"
+    });
+    renderer.setSize(400, 400);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    container.appendChild(renderer.domElement);
+    const geometry = new THREE.SphereGeometry(1, 64, 64);
+    const material = new THREE.MeshPhongMaterial({
+      map: new THREE.TextureLoader().load('//unpkg.com/three-globe/example/img/earth-night.jpg'),
+      bumpMap: new THREE.TextureLoader().load('//unpkg.com/three-globe/example/img/earth-topology.png'),
+      bumpScale: 0.08,
+      shininess: 28,
+      specular: new THREE.Color(0x111111)
+    });
+    globe = new THREE.Mesh(geometry, material);
+    scene.add(globe);
+    const ambientLight = new THREE.AmbientLight(0x404040, 0.22);
+    scene.add(ambientLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.35);
+    directionalLight.position.set(5, 3, 5);
+    directionalLight.castShadow = true;
+    scene.add(directionalLight);
+    const hemiLight = new THREE.HemisphereLight(0x66ffff, 0xff66ff, 1.5);
+    scene.add(hemiLight);
+    const spotCyan = new THREE.SpotLight(0x66ffff, 2.5, 220, Math.PI / 2.2, 3.85);
+    spotCyan.position.set(-4, 3.5, 5);
+    spotCyan.target.position.set(0, 0, 0);
+    scene.add(spotCyan);
+    scene.add(spotCyan.target);
+    const spotMagenta = new THREE.SpotLight(0xff66ff, 2.45, 220, Math.PI / 2.2, 3.85);
+    spotMagenta.position.set(4, -3.5, 5);
+    spotMagenta.target.position.set(0, 0, 0);
+    scene.add(spotMagenta);
+    scene.add(spotMagenta.target);
+    const rimCyan = new THREE.DirectionalLight(0x66ffff, 0.08);
+    rimCyan.position.set(-2, 0.5, -2);
+    scene.add(rimCyan);
+    const rimMagenta = new THREE.DirectionalLight(0xff55ff, 0.08);
+    rimMagenta.position.set(2, -0.5, -2);
+    scene.add(rimMagenta);
+    camera.position.z = 2.5;
+    const animate = () => {
+      animationId = requestAnimationFrame(animate);
+      globe.rotation.y += 0.005;
+      globe.rotation.x = Math.sin(Date.now() * 0.001) * 0.1;
+      const scale = 1 + Math.sin(Date.now() * 0.002) * 0.05;
+      globe.scale.setScalar(scale);
+      renderer.render(scene, camera);
+    };
+    animate();
+    let isDragging = false;
+    let mouseX = 0, mouseY = 0;
+    let targetRotationX = 0, targetRotationY = 0;
+    let previousMouseX = 0, previousMouseY = 0;
+    const handleMouseDown = (event) => {
+      isDragging = true;
+      previousMouseX = event.clientX;
+      previousMouseY = event.clientY;
+      container.style.cursor = 'grabbing';
+    };
+    const handleMouseMove = (event) => {
+      if (!isDragging) return;
+      const deltaX = event.clientX - previousMouseX;
+      const deltaY = event.clientY - previousMouseY;
+      targetRotationY += deltaX * 0.01;
+      targetRotationX += deltaY * 0.01;
+      previousMouseX = event.clientX;
+      previousMouseY = event.clientY;
+    };
+    const handleMouseUp = () => {
+      isDragging = false;
+      container.style.cursor = 'grab';
+    };
+    const handleMouseLeave = () => {
+      isDragging = false;
+      container.style.cursor = 'grab';
+    };
+    container.addEventListener('mousedown', handleMouseDown);
+    container.addEventListener('mousemove', handleMouseMove);
+    container.addEventListener('mouseup', handleMouseUp);
+    container.addEventListener('mouseleave', handleMouseLeave);
+    container.style.cursor = 'grab';
+    const updateRotation = () => {
+      globe.rotation.y += (targetRotationY - globe.rotation.y) * 0.1;
+      globe.rotation.x += (targetRotationX - globe.rotation.x) * 0.1;
+    };
+    const updateLoop = () => {
+      updateRotation();
+      requestAnimationFrame(updateLoop);
+    };
+    updateLoop();
+    const handleResize = () => {
+      const rect = container.getBoundingClientRect();
+      camera.aspect = rect.width / rect.height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(rect.width, rect.height);
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    isInitialized = true;
+    return () => {
+      if (animationId) cancelAnimationFrame(animationId);
+      if (container && renderer.domElement) container.removeChild(renderer.domElement);
+      window.removeEventListener('resize', handleResize);
+      container.removeEventListener('mousedown', handleMouseDown);
+      container.removeEventListener('mousemove', handleMouseMove);
+      container.removeEventListener('mouseup', handleMouseUp);
+      container.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  };
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(initGlobe, 1000); // Delay to ensure smooth loading
+  });
+  window.addEventListener('beforeunload', () => {
+    if (animationId) cancelAnimationFrame(animationId);
+  });
+</script>
+
+<style>
+  .contact-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(0, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .contact-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .title-text {
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  }
+  .title-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+    border-radius: 2px;
+    margin: 1rem auto 0;
+    animation: expand-line 1s ease-out 0.5s both;
+    box-shadow: 0 0 10px var(--neon-cyan);
+  }
+  .section-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+  .info-card {
+    --brand-gradient: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+    border-radius: 20px;
+    padding: 2.5rem;
+    backdrop-filter: blur(20px) saturate(120%);
+    background:
+      linear-gradient(color-mix(in oklab, var(--bg-primary) 86%, transparent), color-mix(in oklab, var(--bg-primary) 86%, transparent)) padding-box,
+      var(--brand-gradient) border-box;
+    border: 2px solid transparent;
+    box-shadow: 
+      0 20px 50px rgba(0, 0, 0, 0.18),
+      0 0 0 1px rgba(255,255,255,0.06) inset,
+      0 0 28px rgba(0, 255, 255, 0.18),
+      0 0 22px rgba(255, 0, 255, 0.12);
+  }
+  .info-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+  .info-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: linear-gradient(var(--bg-tertiary), var(--bg-tertiary)) padding-box, var(--brand-gradient) border-box;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  .contact-method:hover {
+    background: linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box, var(--brand-gradient) border-box;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 24px rgba(0, 255, 255, 0.2), 0 0 18px rgba(255, 0, 255, 0.16);
+  }
+  .method-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--neon-cyan);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-primary);
+    flex-shrink: 0;
+    box-shadow: 0 0 20px var(--neon-cyan);
+  }
+  .method-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .method-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .method-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .method-value {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  .availability {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--glass-border);
+  }
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 10px var(--neon-green);
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  .globe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .globe-wrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+  }
+  .globe-3d {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    --brand-gradient: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+    box-shadow:
+      0 24px 50px rgba(0, 0, 0, 0.35),
+      0 0 28px rgba(0, 255, 255, 0.18),
+      0 0 22px rgba(255, 0, 255, 0.12);
+    background:
+      linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
+      var(--brand-gradient) border-box;
+    border: 2px solid transparent;
+  }
+  .globe-info {
+    --brand-gradient: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+    will-change: transform, backdrop-filter;
+    background: linear-gradient(color-mix(in oklab, var(--bg-primary) 86%, transparent), color-mix(in oklab, var(--bg-primary) 86%, transparent)) padding-box, var(--brand-gradient) border-box;
+    border: 2px solid transparent;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.06) inset, 0 0 22px rgba(0, 255, 255, 0.16), 0 0 18px rgba(255, 0, 255, 0.12);
+  }
+  .globe-info.aos-animate {
+    transform: translateX(-50%) translateZ(0);
+  }
+  .globe-stats {
+    display: flex;
+    gap: 2rem;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--neon-cyan);
+    margin-bottom: 0.25rem;
+    text-shadow: 0 0 10px var(--neon-cyan);
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  @media (max-width: 1024px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .globe-wrapper {
+      width: 300px;
+      height: 300px;
+    }
+  }
+  @media (max-width: 768px) {
+    .contact-section {
+      padding: 4rem 0;
+    }
+    .contact-container {
+      padding: 0 1rem;
+    }
+    .info-card {
+      padding: 2rem;
+    }
+    .globe-wrapper {
+      width: 250px;
+      height: 250px;
+    }
+    .globe-stats {
+      gap: 1rem;
+    }
+    .stat-number {
+      font-size: 1.2rem;
+    }
+  }
+</style>
