@@ -86,7 +86,48 @@ export const projects: Project[] = [
         href: 'https://github.com/enegalan/cmdset',
         status: 'Completed',
         category: 'Library'
+    },
+    {
+        year: '2025',
+        month: 'OCT',
+        title: 'keycode',
+        description: 'Keycode is a competitive typing web application designed specifically for developers to improve their coding speed and accuracy across different programming languages.',
+        technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Socket.io', 'Express', 'Node.js', 'MongoDB', 'JWT'],
+        href: 'https://github.com/enegalan/keycode',
+        image: '/portfolio/images/projects/keycode.png',
+        status: 'Completed',
+        category: 'Web App'
+    },
+    {
+        year: '2025',
+        month: 'OCT',
+        title: 'keyboard-tester',
+        description: 'Simple Keyboard Tester written in SvelteKit.',
+        technologies: ['Svelte', 'TypeScript', 'Tailwind CSS', 'Node.js'],
+        href: 'https://github.com/enegalan/keyboard-tester',
+        image: '/portfolio/images/projects/keyboard-tester.png',
+        status: 'Completed',
+        category: 'Web App'
+    },
+    {
+        year: '2025',
+        month: 'OCT',
+        title: 'logget',
+        description: 'A command-line tool to extract browser logs and network data from web pages using an embedded Chromium browser.',
+        technologies: ['Go', 'Shell', 'Makefile'],
+        href: 'https://github.com/enegalan/logget',
+        status: 'Completed',
+        category: 'Library'
+    },
+    {
+        year: '2025',
+        month: 'NOV',
+        title: 'codevo',
+        description: 'CodEvo is an extension for VSCode that visualizes the evolution of any file over time.',
+        technologies: ['VSCode', 'JavaScript', 'TypeScript', 'D3.js', 'CSS'],
+        href: 'https://github.com/enegalan/codevo',
+        image: '/portfolio/images/projects/codevo.png',
+        status: 'Completed',
+        category: 'Extension'
     }
 ];
-
-
