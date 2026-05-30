@@ -129,5 +129,90 @@ export const projects: Project[] = [
         image: '/portfolio/images/projects/codevo.png',
         status: 'Completed',
         category: 'Extension'
+    },
+    {
+        year: '2025',
+        month: 'NOV',
+        title: 'request-manager',
+        description: 'A JavaScript library that helps you organize and control HTTP requests efficiently.',
+        technologies: ['JavaScript'],
+        href: 'https://github.com/enegalan/request-manager',
+        status: 'Completed',
+        category: 'Library'
+    },
+    {
+        year: '2026',
+        month: 'JAN',
+        title: 'time-to-go',
+        description: 'A Visual Studio Code extension that shows the remaining time until your set end time in the status bar.',
+        technologies: ['TypeScript', 'VSCode'],
+        href: 'https://github.com/enegalan/time-to-go',
+        image: '/portfolio/images/projects/time-to-go.png',
+        status: 'Completed',
+        category: 'Extension'
+    },
+    {
+        year: '2026',
+        month: 'FEB',
+        title: 'contextmenu.js',
+        description: 'A smooth and highly customizable JavaScript context-menu library.',
+        technologies: ['TypeScript', 'CSS'],
+        href: 'https://github.com/enegalan/contextmenu.js',
+        image: '/portfolio/images/projects/contextmenu.js.png',
+        status: 'Completed',
+        category: 'Library'
+    },
+    {
+        year: '2026',
+        month: 'FEB',
+        title: 'cleantimeline',
+        description: 'A Visual Studio Code extension that provides granular control over Local History. Delete full timeline entries or individual snapshots for the active file safely and efficiently.',
+        technologies: ['TypeScript', 'VSCode'],
+        href: 'https://github.com/enegalan/cleantimeline',
+        status: 'Completed',
+        category: 'Extension'
+    },
+    {
+        year: '2026',
+        month: 'FEB',
+        title: 'toth',
+        description: 'A modern platform for discovering and downloading EPUB books.',
+        technologies: ['TypeScript', 'CSS', 'Tailwind CSS', 'PostgreSQL', 'Node.js', 'NestJS', 'Docker', 'Redis', 'Meilisearch'],
+        href: 'https://github.com/enegalan/toth',
+        image: '/portfolio/images/projects/toth.png',
+        status: 'Completed',
+        category: 'Web App'
+    },
+    {
+        year: '2026',
+        month: 'MAR',
+        title: 'lightpickr',
+        description: 'A lightweight, fully customizable & headless JavaScript datepicker.',
+        technologies: ['JavaScript', 'CSS'],
+        href: 'https://github.com/enegalan/lightpickr',
+        image: '/portfolio/images/projects/lightpickr.png',
+        status: 'Completed',
+        category: 'Library'
+    },
+    {
+        year: '2026',
+        month: 'MAR',
+        title: 'horizonhub',
+        description: 'A centralized dashboard for monitoring Laravel Horizon jobs across multiple services.',
+        technologies: ['Laravel', 'Node.js', 'MySQL', 'Docker', 'Redis', 'Vite', 'Tailwind CSS', 'JavaScript', 'Turbo (hotwired)', 'Alpine.js'],
+        href: 'https://github.com/enegalan/horizonhub',
+        image: '/portfolio/images/projects/horizonhub.png',
+        status: 'Completed',
+        category: 'Web App'
+    },
+    {
+        year: '2026',
+        month: 'APR',
+        title: 'cli-tamagotchi',
+        description: 'A terminal Tamagotchi.',
+        technologies: ['Python'],
+        href: 'https://github.com/enegalan/cli-tamagotchi',
+        status: 'Early Dev',
+        category: 'CLI'
     }
 ];
