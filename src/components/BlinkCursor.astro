@@ -1,0 +1,33 @@
+---
+// Blinking terminal cursor component
+export interface Props {
+    class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<span class={`blink-cursor ${className}`}></span>
+
+<style>
+    .blink-cursor {
+        display: inline-block;
+        position: relative;
+        margin-left: 5px;
+        width: 5px;
+        height: 1em;
+        background-color: white;
+        animation: blink 1s linear infinite;
+        vertical-align: sub;
+        transform: translateY(-1px);
+    }
+    .blink-light {
+        transform: translateY(1px) !important;
+        height: 20px !important;
+    }
+    @keyframes blink {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+</style>

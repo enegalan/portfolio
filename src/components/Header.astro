@@ -1,0 +1,309 @@
+---
+import BlinkCursor from './BlinkCursor.astro';
+import { INTERESTS, SKILLS } from '../data/constants';
+---
+
+<header class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="hero-title">
+          <span class="name-gradient">Eneko Galan</span>
+          <div class="title-line"></div>
+        </h1>
+        <div class="hero-subtitle">
+          <span class="role-text">Full Stack Web Developer <BlinkCursor class="blink-light"/></span>
+        </div>
+        <p class="hero-description">
+          Dedicated individual with a passion for new technologies. My experience covers several areas of the technology sector, meeting all the needs of an application throughout its lifecycle, from development to deployment.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-neon">
+            <span>View My Work</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-neon-pink">
+            <span>Get In Touch</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+        <div class="visual-container">
+          <div class="code-window glass-card">
+            <div class="window-header">
+              <div class="window-controls">
+                <div class="control close"></div>
+                <div class="control minimize"></div>
+                <div class="control maximize"></div>
+              </div>
+              <div class="window-title">About Me</div>
+            </div>
+            <div class="window-content">
+              <div class="code-line">
+                <span class="terminal-prompt">$</span>
+                <span class="code-variable">Eneko.contactInfo</span>
+              </div>
+              <div class="code-line">
+                <span class="code-string">["</span><a class="code-link" href="mailto:enekogalanelorza@gmail.com">enekogalanelorza@gmail.com</a><span class="code-string">"</span><span class="code-operator">,</span>
+                <span class="code-string">"</span><a class="code-link" href="https://www.linkedin.com/in/eneko-galan" target="_blank" rel="noopener">LinkedIn</a><span class="code-string">"</span><span class="code-operator">,</span>
+                <span class="code-string">"</span><a class="code-link" href="https://github.com/egalan" target="_blank" rel="noopener">GitHub</a><span class="code-string">"]</span>
+              </div>
+              <div class="code-line">
+                <span class="terminal-prompt">$</span>
+                <span class="code-variable">Eneko.interests</span>
+              </div>
+              <div class="code-line">
+                <span class="code-string">[{INTERESTS.map(interest => `"${interest}"`).join(", ")}]</span>
+              </div>
+              <div class="code-line">
+                <span class="terminal-prompt">$</span>
+                <span class="code-variable">Eneko.skills</span>
+              </div>
+              <div class="code-line">
+                <span class="code-string">[{SKILLS.map(skill => `"${skill}"`).join(", ")}]</span>
+              </div>
+              <div class="code-line" style="display: flex;align-items: center;gap: .2rem;">
+                <span class="terminal-prompt">$</span>
+                <BlinkCursor />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+    z-index: 10;
+  }
+  .hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+  .hero-text { max-width: 600px; }
+  .role-text {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+  }
+  .hero-title {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .name-gradient {
+    display: block;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink), var(--neon-purple));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease-in-out infinite;
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  }
+  .title-line {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+    border-radius: 2px;
+    margin-top: 1rem;
+    animation: expand-line 1s ease-out 0.5s both;
+    box-shadow: 0 0 10px var(--neon-cyan);
+  }
+  @keyframes expand-line {
+    0% { width: 0; }
+    100% { width: 100px; }
+  }
+  .hero-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  .btn:hover::before { left: 100%; }
+  .btn-neon {
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+  }
+  .btn-neon:hover {
+    background: var(--neon-cyan);
+    color: var(--bg-primary);
+    box-shadow: 0 0 20px var(--neon-cyan);
+    transform: translateY(-2px);
+  }
+  .btn-neon-pink {
+    background: transparent;
+    border: 2px solid var(--neon-pink);
+    color: var(--neon-pink);
+  }
+  .btn-neon-pink:hover {
+    background: var(--neon-pink);
+    color: var(--bg-primary);
+    box-shadow: 0 0 20px var(--neon-pink);
+    transform: translateY(-2px);
+  }
+  .btn-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+  .btn:hover .btn-icon {
+    transform: translateX(2px);
+  }
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .visual-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+  }
+  .code-window {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 255, 255, 0.2);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+  .window-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .window-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-right: 1rem;
+  }
+  .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .control.close { background: #ff5f56; }
+  .control.minimize { background: #ffbd2e; }
+  .control.maximize { background: #27ca3f; }
+  .window-title {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .window-content {
+    padding: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    background: var(--bg-primary);
+  }
+  .code-line {
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: type-in 0.5s ease-out forwards;
+  }
+  .code-line:nth-child(1) { animation-delay: 0.5s; }
+  .code-line:nth-child(2) { animation-delay: 1s; }
+  .code-line:nth-child(3) { animation-delay: 1.5s; }
+  .code-line:nth-child(4) { animation-delay: 2s; }
+  .code-line:nth-child(5) { animation-delay: 2.5s; }
+  .code-line:nth-child(6) { animation-delay: 3s; }
+  .code-line:nth-child(7) { animation-delay: 3.5s; }
+  .code-line:nth-child(8) { animation-delay: 4s; }
+  .code-line:nth-child(9) { animation-delay: 4.5s; }
+  .code-line:nth-child(10) { animation-delay: 5s; }
+  .code-line:nth-child(11) { animation-delay: 5.5s; }
+  .code-line:nth-child(12) { animation-delay: 6s; }
+  @keyframes type-in {
+    0% { opacity: 0; transform: translateX(-10px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  .indent { padding-left: 2rem; }
+  .code-keyword { color: #ff79c6; }
+  .code-variable { color: #8be9fd; }
+  .code-string { color: #f1fa8c; }
+  .code-operator { color: #ff79c6; }
+  .code-bracket { color: #50fa7b; }
+  .terminal-prompt { color: #50fa7b; font-weight: bold; }
+  .code-link { color: #61afef; text-decoration: none; }
+  .code-link:hover { text-decoration: none; }
+  @media (max-width: 1024px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+    .hero-visual { order: -1; }
+  }
+  @media (max-width: 768px) {
+    .hero-section { padding: 1rem 0; }
+    .hero-container { padding: 0 1rem; }
+    .hero-actions { justify-content: center; }
+    .btn {
+      padding: 0.75rem 1.25rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
