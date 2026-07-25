@@ -214,5 +214,17 @@ export const projects: Project[] = [
         href: 'https://github.com/enegalan/cli-tamagotchi',
         status: 'Early Dev',
         category: 'CLI'
+    },
+    ,
+    {
+        year: '2026',
+        month: 'JUN',
+        title: 'runspace',
+        description: 'A desktop sandbox for running multiple programming runtimes in isolated, on-demand environments.',
+        technologies: ['TypeScript', 'Rust', 'Tauri', 'Node.js', 'Vite', 'React'],
+        href: 'https://github.com/enegalan/runspace',
+        image: '/portfolio/images/projects/runspace.png',
+        status: 'Stable Dev',
+        category: 'Desktop App'
     }
 ];
