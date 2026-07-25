@@ -225,5 +225,16 @@ export const projects: Project[] = [
         image: '/portfolio/images/projects/runspace.png',
         status: 'Stable Dev',
         category: 'Desktop App'
+    },
+    {
+        year: '2026',
+        month: 'JUL',
+        title: 'calf',
+        description: 'A fast, lightweight alternative to Docker Desktop.',
+        technologies: ['Go', 'Flutter', 'Dart'],
+        href: 'https://github.com/enegalan/calf',
+        image: '/portfolio/images/projects/calf.png',
+        status: 'Stable Dev',
+        category: 'Desktop App'
     }
 ];
