@@ -215,7 +215,6 @@ export const projects: Project[] = [
         status: 'Early Dev',
         category: 'CLI'
     },
-    ,
     {
         year: '2026',
         month: 'JUN',
