@@ -11,7 +11,7 @@ const projectsCount = projects.length;
 
 <section class="tools-section" id="tools">
   <div class="tools-container">
-    <div class="section-header" data-aos="fade-up">
+    <div class="section-header reveal">
       <h2 class="section-title">
         <span class="title-text">Tech Stack</span>
         <BlinkCursor />
@@ -62,58 +62,24 @@ const projectsCount = projects.length;
 
 <style>
   .tools-section {
-    padding: 6rem 0;
-    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    padding: var(--section-padding) 0;
     position: relative;
     overflow: hidden;
   }
   .tools-section::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+    inset: 0;
+    background: var(--gradient-brand-soft);
     pointer-events: none;
+    opacity: 0.6;
   }
   .tools-container {
-    max-width: 1400px;
+    max-width: var(--container-max);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 var(--container-padding);
     position: relative;
     z-index: 1;
-  }
-  .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  .section-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin-bottom: 1rem;
-    position: relative;
-  }
-  .title-text {
-    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
-  }
-  .title-underline {
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
-    border-radius: 2px;
-    margin: 1rem auto 0;
-    animation: expand-line 1s ease-out 0.5s both;
-    box-shadow: 0 0 10px var(--neon-cyan);
-  }
-  .section-description {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
   }
   .tools-swiper-container {
     width: 100%;
@@ -240,22 +206,35 @@ const projectsCount = projects.length;
   .experience-stats {
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: clamp(2rem, 6vw, 4.5rem);
     flex-wrap: wrap;
-    padding: 2rem;
+    padding: 2.25rem 2.5rem;
     border-radius: 20px;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(24px);
     border: 1px solid var(--glass-border);
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-smooth);
+  }
+  .experience-stats:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow-cyan), var(--shadow-card);
+  }
+  .stat-item {
+    transition: transform 0.35s var(--ease-out-expo);
+  }
+  .stat-item:hover {
+    transform: scale(1.05);
   }
   .stat-number {
-    font-size: 3rem;
+    font-size: clamp(2.25rem, 5vw, 3rem);
     font-weight: 800;
-    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+    background: var(--gradient-text);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    margin-bottom: 0.35rem;
+    animation: gradient-flow 8s ease infinite;
   }
   .stat-label {
     color: var(--text-secondary);

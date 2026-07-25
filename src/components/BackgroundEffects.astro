@@ -1,0 +1,157 @@
+<div id="ambient-background" aria-hidden="true">
+  <canvas id="particle-canvas"></canvas>
+  <div class="gradient-mesh">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    <div class="blob blob-5"></div>
+    <div class="blob blob-6"></div>
+  </div>
+  <div class="grid-overlay"></div>
+  <div class="noise-overlay"></div>
+</div>
+
+<style>
+  #ambient-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+    background: var(--bg-primary);
+  }
+
+  #particle-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+  }
+
+  .gradient-mesh {
+    position: absolute;
+    inset: 0;
+  }
+
+  .blob {
+    position: absolute;
+    filter: blur(80px);
+    opacity: 0.45;
+    will-change: transform;
+  }
+
+  .blob-1 {
+    width: 55vw;
+    height: 55vw;
+    max-width: 700px;
+    max-height: 700px;
+    top: -15%;
+    right: -10%;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.35) 0%, transparent 70%);
+    animation: blob-morph 28s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+
+  .blob-2 {
+    width: 45vw;
+    height: 45vw;
+    max-width: 600px;
+    max-height: 600px;
+    bottom: -10%;
+    left: -12%;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, transparent 70%);
+    animation: blob-morph 34s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite reverse;
+    animation-delay: -12s;
+  }
+
+  .blob-3 {
+    width: 35vw;
+    height: 35vw;
+    max-width: 450px;
+    max-height: 450px;
+    top: 45%;
+    left: 35%;
+    background: radial-gradient(circle, rgba(251, 113, 133, 0.2) 0%, transparent 70%);
+    animation: float 26s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+
+  .blob-4 {
+    width: 25vw;
+    height: 25vw;
+    max-width: 320px;
+    max-height: 320px;
+    top: 20%;
+    left: 10%;
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.25) 0%, transparent 70%);
+    animation: float-slow 32s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    animation-delay: -9s;
+  }
+
+  .blob-5 {
+    width: 40vw;
+    height: 40vw;
+    max-width: 520px;
+    max-height: 520px;
+    top: 60%;
+    right: 5%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, transparent 70%);
+    animation: float 30s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite reverse;
+    animation-delay: -15s;
+  }
+
+  .blob-6 {
+    width: 30vw;
+    height: 30vw;
+    max-width: 380px;
+    max-height: 380px;
+    bottom: 25%;
+    left: 45%;
+    background: radial-gradient(circle, rgba(192, 132, 252, 0.22) 0%, transparent 70%);
+    animation: blob-morph 36s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    animation-delay: -18s;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: -50%;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 75%);
+    animation: grid-drift 40s linear infinite;
+  }
+
+  .noise-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 128px 128px;
+  }
+
+  @media (max-width: 768px) {
+    .blob {
+      filter: blur(60px);
+      opacity: 0.35;
+    }
+
+    #particle-canvas {
+      opacity: 0.4;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .blob,
+    .grid-overlay {
+      animation: none;
+    }
+
+    #particle-canvas {
+      display: none;
+    }
+  }
+</style>

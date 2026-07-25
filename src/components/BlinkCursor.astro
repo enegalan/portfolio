@@ -13,21 +13,24 @@ const { class: className = '' } = Astro.props;
     .blink-cursor {
         display: inline-block;
         position: relative;
-        margin-left: 5px;
-        width: 5px;
+        margin-left: 4px;
+        width: 2px;
         height: 1em;
-        background-color: white;
-        animation: blink 1s linear infinite;
+        background: var(--accent-cyan, #22d3ee);
+        border-radius: 1px;
+        animation: blink 1.1s step-end infinite;
         vertical-align: sub;
         transform: translateY(-1px);
+        box-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
     }
     .blink-light {
         transform: translateY(1px) !important;
         height: 20px !important;
     }
-    @keyframes blink {
-        0% { opacity: 0; }
-        50% { opacity: 1; }
-        100% { opacity: 0; }
+    @media (prefers-reduced-motion: reduce) {
+        .blink-cursor {
+            animation: none;
+            opacity: 0;
+        }
     }
 </style>
