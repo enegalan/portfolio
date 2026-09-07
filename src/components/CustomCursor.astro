@@ -1,0 +1,88 @@
+<div id="custom-cursor" aria-hidden="true">
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+</div>
+
+<style>
+  #custom-cursor {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s var(--ease-smooth);
+  }
+
+  #custom-cursor.is-active {
+    opacity: 1;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform, width, height, background, border-color;
+  }
+
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-cyan);
+    box-shadow: 0 0 12px rgba(34, 211, 238, 0.8), 0 0 24px rgba(167, 139, 250, 0.35);
+    z-index: 2;
+  }
+
+  .cursor-ring {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(34, 211, 238, 0.55);
+    background: rgba(34, 211, 238, 0.04);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.12);
+    z-index: 1;
+    transition:
+      width 0.3s var(--ease-out-expo),
+      height 0.3s var(--ease-out-expo),
+      border-color 0.3s var(--ease-smooth),
+      background 0.3s var(--ease-smooth),
+      box-shadow 0.3s var(--ease-smooth);
+  }
+
+  #custom-cursor.is-hover .cursor-ring {
+    width: 56px;
+    height: 56px;
+    border-color: rgba(167, 139, 250, 0.7);
+    background: rgba(167, 139, 250, 0.08);
+    box-shadow: 0 0 28px rgba(167, 139, 250, 0.25);
+  }
+
+  #custom-cursor.is-hover .cursor-dot {
+    background: var(--accent-violet);
+    box-shadow: 0 0 14px rgba(167, 139, 250, 0.9), 0 0 28px rgba(223, 93, 218, 0.35);
+  }
+
+  #custom-cursor.is-click .cursor-ring {
+    width: 28px;
+    height: 28px;
+    border-color: var(--accent-rose);
+    background: rgba(223, 93, 218, 0.12);
+  }
+
+  #custom-cursor.is-click .cursor-dot {
+    background: var(--accent-rose);
+  }
+
+  @media (hover: none), (pointer: coarse) {
+    #custom-cursor {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #custom-cursor {
+      display: none;
+    }
+  }
+</style>

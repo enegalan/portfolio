@@ -149,10 +149,81 @@ export function initSmoothAnchors() {
   });
 }
 
+export function initCustomCursor() {
+  const root = document.getElementById('custom-cursor');
+  if (!root) return;
+
+  const canUse =
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+    !prefersReducedMotion();
+
+  if (!canUse) {
+    document.body.classList.remove('has-custom-cursor');
+    root.classList.remove('is-active');
+    return;
+  }
+
+  const dot = root.querySelector('.cursor-dot');
+  const ring = root.querySelector('.cursor-ring');
+  if (!dot || !ring) return;
+
+  document.body.classList.add('has-custom-cursor');
+
+  if (root.dataset.bound === 'true') return;
+  root.dataset.bound = 'true';
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let ringX = mouseX;
+  let ringY = mouseY;
+  let visible = false;
+
+  const hoverSelector =
+    'a, button, [role="button"], input, textarea, select, label, .btn, .btn-neon, .btn-neon-pink, .tool-card, .project-card, .swiper-slide, summary';
+
+  const onMove = (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    if (!visible) {
+      visible = true;
+      root.classList.add('is-active');
+      ringX = mouseX;
+      ringY = mouseY;
+    }
+
+    dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+
+    const target = e.target instanceof Element ? e.target.closest(hoverSelector) : null;
+    root.classList.toggle('is-hover', Boolean(target));
+  };
+
+  const onDown = () => root.classList.add('is-click');
+  const onUp = () => root.classList.remove('is-click');
+  const onLeave = () => {
+    visible = false;
+    root.classList.remove('is-active', 'is-hover', 'is-click');
+  };
+
+  const animate = () => {
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+    ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+    requestAnimationFrame(animate);
+  };
+
+  document.addEventListener('mousemove', onMove, { passive: true });
+  document.addEventListener('mousedown', onDown);
+  document.addEventListener('mouseup', onUp);
+  document.addEventListener('mouseleave', onLeave);
+  animate();
+}
+
 export function initMotion() {
   initScrollReveal();
   initMagneticButtons();
   initSmoothAnchors();
+  initCustomCursor();
 
   const canvas = document.getElementById('particle-canvas');
   if (canvas) initParticles(canvas);

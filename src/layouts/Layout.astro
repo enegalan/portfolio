@@ -1,6 +1,7 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 import BackgroundEffects from '../components/BackgroundEffects.astro';
+import CustomCursor from '../components/CustomCursor.astro';
 import '../css/global.css';
 import '../css/animations.css';
 
@@ -28,6 +29,7 @@ const { title, description = "Eneko Galan - DevOps & Web Developer Portfolio" } 
   </head>
   <body>
     <BackgroundEffects />
+    <CustomCursor />
     <div id="main-content" transition:animate="fade">
       <slot />
     </div>

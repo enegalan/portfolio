@@ -66,6 +66,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
 #main-content {
   position: relative;
   z-index: 10;
