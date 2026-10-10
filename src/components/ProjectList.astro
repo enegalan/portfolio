@@ -1,6 +1,9 @@
 ---
 import { projects } from "../data/projects";
 import BlinkCursor from './BlinkCursor.astro';
+
+const allTechnologies = [...new Set(projects.flatMap((project) => project.technologies))]
+  .sort((a, b) => a.localeCompare(b));
 ---
 
 <section class="projects-section" id="projects">
@@ -15,10 +18,19 @@ import BlinkCursor from './BlinkCursor.astro';
         A showcase of my recent work and side projects
       </p>
     </div>
+    <div class="projects-filter" data-aos="fade-up">
+      <div class="filter-tags" role="group" aria-label="Filter projects by technology">
+        <button type="button" class="filter-tag is-active" data-filter="all" aria-pressed="true">All</button>
+        {allTechnologies.map((tech) => (
+          <button type="button" class="filter-tag" data-filter={tech.toLowerCase()} aria-pressed="false">{tech}</button>
+        ))}
+      </div>
+    </div>
     <div class="projects-timeline">
       {projects.map((project, index) => (
         <div 
           class="project-card glass-card reveal" 
+          data-tech={project.technologies.map((tech) => tech.toLowerCase()).join(' ')}
           style={`view-transition-name: project-${index}; --reveal-delay: ${index * 80}ms`}
         >
           <div class="card-header">
@@ -185,6 +197,43 @@ import BlinkCursor from './BlinkCursor.astro';
       if (!clickInside && !clickOverlay) closeProject();
     }, true);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeProject(); });
+
+    document.addEventListener('click', (e) => {
+      const tag = e.target.closest('.filter-tag');
+      if (!tag) return;
+      const filterBar = tag.closest('.filter-tags');
+      if (!filterBar) return;
+
+      const clicked = tag.dataset.filter;
+      const active = new Set(
+        [...filterBar.querySelectorAll('.filter-tag.is-active')]
+          .map((el) => el.dataset.filter)
+          .filter((f) => f !== 'all')
+      );
+
+      if (clicked === 'all') {
+        active.clear();
+      } else if (active.has(clicked)) {
+        active.delete(clicked);
+      } else {
+        active.add(clicked);
+      }
+
+      filterBar.querySelectorAll('.filter-tag').forEach((el) => {
+        const f = el.dataset.filter;
+        const isActive = f === 'all' ? active.size === 0 : active.has(f);
+        el.classList.toggle('is-active', isActive);
+        el.setAttribute('aria-pressed', String(isActive));
+      });
+
+      filterBar.closest('.projects-filter')?.classList.toggle('has-selection', active.size > 0);
+
+      document.querySelectorAll('.project-card').forEach((card) => {
+        const techs = (card.dataset.tech || '').split(' ');
+        const matches = active.size === 0 || [...active].some((f) => techs.includes(f));
+        card.classList.toggle('is-hidden', !matches);
+      });
+    });
   </script>
 </section>
 
@@ -204,9 +253,46 @@ import BlinkCursor from './BlinkCursor.astro';
   }
   .projects-timeline {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
     margin-bottom: 3rem;
+  }
+  .projects-filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .filter-tag {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: transform 0.3s var(--ease-out-expo), border-color 0.3s ease, color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .filter-tag:hover {
+    transform: translateY(-2px);
+    border-color: rgba(34, 211, 238, 0.35);
+    color: var(--accent-cyan);
+  }
+  .filter-tag.is-active {
+    background: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+    color: var(--bg-primary);
+    box-shadow: 0 0 14px rgba(34, 211, 238, 0.4);
+  }
+  .project-card.is-hidden {
+    display: none;
   }
   .project-card {
     border-radius: 18px;
